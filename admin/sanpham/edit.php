@@ -1,6 +1,6 @@
 <?php
 session_start();
-    $_SESSION['folder_root'] = '/PHP2/views/'; // DUONG DAN THU MUC
+    $_SESSION['folder_root'] = '/views/'; // DUONG DAN THU MUC
     // $_SESSION['folder_root'] = $_SERVER["REQUEST_URI"];  // ở đây tôi lấy luôn đường dẩn hiện tại
 ?>
 <!DOCTYPE html>
@@ -51,10 +51,10 @@ session_start();
             <div class="mb-3">
                 <label for="exampleInputPassword2" class="form-label h6">Hình ảnh</label>
                 <div class="input-group mb-3">
-                    <input type="text" id="exampleInputPassword2" value="http://localhost/php2/views/images/<?= $Pros['image'] ?>" name="img" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input type="text" id="exampleInputPassword2" value="http://localhost/views/images/<?= $Pros['image'] ?>" name="img" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     <button type="button" class="input-group-text" id="basic-addon2" data-bs-toggle="modal" data-bs-target="#exampleModal">Chọn ảnh</button>
                 </div>
-                <img src="http://localhost/php2/views/images/<?= $Pros['image'] ?>"" alt="" style="width: 200px" id="show_img">
+                <img src="http://localhost/views/images/<?= $Pros['image'] ?>"" alt="" style="width: 200px" id="show_img">
             </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

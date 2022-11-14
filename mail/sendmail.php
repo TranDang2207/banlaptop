@@ -21,7 +21,7 @@ class Mailer
             $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = 'dangttps14566@fpt.edu.vn';                 // SMTP username
-            $mail->Password = 'ennvptxureuhuidi';                           // SMTP password
+            $mail->Password = 'qweAsdzxc2207';                           // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
         

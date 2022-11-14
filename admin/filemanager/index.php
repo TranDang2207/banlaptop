@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="box-body">
-        <iframe src="http://localhost/PHP2/admin/filemanager/file/dialog.php" style="width: 100%; height: 600px; border: 0; overflow-y: auto" frameborder="0"></iframe>
+        <iframe src="http://localhost/admin/filemanager/file/dialog.php" style="width: 100%; height: 600px; border: 0; overflow-y: auto" frameborder="0"></iframe>
     </div>
 </body>
 </html>

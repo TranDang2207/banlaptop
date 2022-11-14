@@ -59,7 +59,7 @@
                         <td>
                             <button type="button" class="btn btn-success offset-2"><a href="?ctrl=sanpham&act=edit&id=<?= $row[0]; ?>" class="text-decoration-none text-white p-2">Sửa</a></button>
                             <button type="button" class="btn btn-success m-2"><a href="?ctrl=sanpham&act=delete&id=<?= $row[0]; ?>" onclick="return confirm('có muốn xóa không?')" class="text-decoration-none text-white p-2">Xóa</a></button>
-                            <button type="button" class="btn btn-success offset-3"><a href="/PHP2/?action=chitietsp&id=<?= $row[0]; ?>" class="text-decoration-none text-white p-2">Xem chi tiết</a></button>
+                            <button type="button" class="btn btn-success offset-3"><a href="/?action=chitietsp&id=<?= $row[0]; ?>" class="text-decoration-none text-white p-2">Xem chi tiết</a></button>
                         </td>
                     </tr>
                 <?php } ?>

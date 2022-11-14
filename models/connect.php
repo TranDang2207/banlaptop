@@ -6,7 +6,7 @@
         function __construct () {
             $dsn = "mysql:host=localhost;dbname=banlaptop";
             $user = 'root';
-            $pass = '';
+            $pass = 'dang12345';
             $this->db = new PDO($dsn , $user, $pass, 
                 array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")) or die("Lỗi kết nối");
             $this->db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

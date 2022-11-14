@@ -2,9 +2,9 @@
 	session_start();
 	if(isset($_SESSION['quyen'])){
 		if($_SESSION['quyen'] == 1){
-            header('location:/php2/controllers/admin.php');
+            header('location:/controllers/admin.php');
         }else{
-            header('location:/php2/');
+            header('location:/');
         }
 	}else{
     include_once('models/connect.php');
@@ -121,7 +121,7 @@
                     </div>
 
                     <div class="text-center p-t-46 p-b-20">
-                        <a href="/php2/register.php" class="txt2">
+                        <a href="/register.php" class="txt2">
                             or sign up using
                         </a>
                     </div>

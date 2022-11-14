@@ -334,7 +334,7 @@ unset($_SESSION['GH']);
 unset($_SESSION['Cart']);
 unset($_SESSION['tongtien']);
 $_SESSION['success'] = 'success';
-header('location:/PHP2/');
+header('location:/');
 }else{
 $hoten = $_POST['hoten'];
 $username = $_POST['username'];
@@ -394,7 +394,7 @@ unset($_SESSION['GH']);
 unset($_SESSION['Cart']);
 unset($_SESSION['tongtien']);
 $_SESSION['success'] = 'Success';
-header('location:/PHP2/');
+header('location:/');
 }
 break;
 case 'myCart':
@@ -407,7 +407,7 @@ $getlistsp = $d->getlistSPlast2();
 include_once('views/MyAccount.php');
 }else{
 $_SESSION['error']['myaccount'] = 'Login to use this function';
-header('location:/PHP2/');
+header('location:/');
 }
 break;
 default:

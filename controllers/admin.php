@@ -3,7 +3,7 @@
     ob_start();
     if(isset($_SESSION['id_kh'])){
         if($_SESSION['quyen'] == 0){
-            header('location:/PHP2/');
+            header('location:/');
         }else{
 ?>
 <!DOCTYPE html>
@@ -82,7 +82,7 @@
     const menuItem = document.getElementsByClassName("list-group-item list-group-item-action");
     const menuLength = menuItem.length;
     for(let i = 0; i < menuLength; i++){
-        if(currentLocation == "http://localhost/PHP2/controllers/admin.php"){
+        if(currentLocation == "http://localhost/controllers/admin.php"){
             currentLocation = currentLocation.concat('?ctrl=loailaptop'); 
         }
         if(menuItem[i].href == currentLocation){
@@ -93,5 +93,5 @@
 </html>
 <?php }
 }else{
-    header('location:/PHP2/login.php');
+    header('location:/login.php');
 } ?>
