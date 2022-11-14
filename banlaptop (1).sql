@@ -43,7 +43,7 @@ CREATE TABLE `binhluan` (
 CREATE TABLE `checkout` (
   `id_hd` int(11) NOT NULL,
   `id_kh` int(11) NOT NULL,
-  `ngay` date NOT NULL DEFAULT current_timestamp(),
+  `ngay` datetime NOT NULL DEFAULT current_timestamp(),
   `tongtien` float NOT NULL,
   `trangthai` tinyint(1) DEFAULT 0,
   `num_oder` int(11) NOT NULL,
@@ -205,7 +205,7 @@ CREATE TABLE `sanpham` (
   `id_loai` int(11) NOT NULL,
   `mota` longtext DEFAULT NULL,
   `AnHien` tinyint(1) NOT NULL DEFAULT 1,
-  `ngayNhap` date DEFAULT current_timestamp(),
+  `ngayNhap` datetime DEFAULT current_timestamp(),
   `Slideshow` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
