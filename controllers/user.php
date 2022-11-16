@@ -328,7 +328,6 @@
 </div>';
 
 $finalmail =$headermail.$bodymail.$footermail;  
-
 $mail->sendmail($email,$username,$finalmail);
 unset($_SESSION['GH']);
 unset($_SESSION['Cart']);

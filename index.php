@@ -17,7 +17,7 @@ $slide = $d->getSlideShow();
 $getlistPro = $d->getlistSP();
 $get1Prolast = $d->get1SPlast();
 $geturl = $_SERVER['HTTP_REFERER'];
-if(isset($_SESSION['tongtien'])==false){
+if (isset($_SESSION['tongtien']) == false) {
     $_SESSION['tongtien'] = 0;
 }
 $dh = new donhangUser();
@@ -32,8 +32,7 @@ $dh = new donhangUser();
     <title>GearVN</title>
 
     <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
-        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 
@@ -56,40 +55,40 @@ $dh = new donhangUser();
     <![endif]-->
 </head>
 <style>
-#tooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-}
+    #tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
 
-#tooltip #tooltiptext {
-    width: 120px;
-    background-color: #198754;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: 120%;
-    left: 50%;
-    margin-left: -60px;
-}
+    #tooltip #tooltiptext {
+        width: 120px;
+        background-color: #198754;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: 120%;
+        left: 50%;
+        margin-left: -60px;
+    }
 
-#tooltip #tooltiptext::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent black transparent;
-}
+    #tooltip #tooltiptext::after {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent black transparent;
+    }
 
-#tooltip:hover #tooltiptext {
-    visibility: visible;
-}
+    #tooltip:hover #tooltiptext {
+        visibility: visible;
+    }
 </style>
 
 <body>
@@ -100,23 +99,23 @@ $dh = new donhangUser();
                     <div class="user-menu">
                         <ul style="position: relative">
                             <li id="tooltip"><a href="?action=MyAccount"><i class="fa fa-user"></i> My Account</a>
-                            <?php if(isset($_SESSION['error']['myaccount'])) { 
-                                    echo "<span id='tooltiptext' style='background-color: #dc3545'>".$_SESSION['error']['myaccount']."</span>";
+                                <?php if (isset($_SESSION['error']['myaccount'])) {
+                                    echo "<span id='tooltiptext' style='background-color: #dc3545'>" . $_SESSION['error']['myaccount'] . "</span>";
                                     unset($_SESSION['success']);
                                 } ?>
-                        </li>
+                            </li>
                             <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                             <li id="tooltip"><a href="?action=cart"><i class="fa fa-user"></i> My Cart</a>
-                                <?php if(isset($_SESSION['success'])) { 
-                                    echo "<span id='tooltiptext'>".$_SESSION['success']."</span>";
+                                <?php if (isset($_SESSION['success'])) {
+                                    echo "<span id='tooltiptext'>" . $_SESSION['success'] . "</span>";
                                     unset($_SESSION['success']);
                                 } ?>
                             </li>
                             <li><a href="?action=checkout"><i class="fa fa-user"></i> Checkout</a></li>
-                            <?php if(isset($_SESSION['id_kh'])) {?>
-                            <li><a href="?action=logout"><i class="fa fa-user"></i> logout</a></li>
+                            <?php if (isset($_SESSION['id_kh'])) { ?>
+                                <li><a href="?action=logout"><i class="fa fa-user"></i> logout</a></li>
                             <?php } else { ?>
-                            <li><a href="login.php"><i class="fa fa-user"></i> Login</a></li>
+                                <li><a href="login.php"><i class="fa fa-user"></i> Login</a></li>
                             <?php } ?>
                         </ul>
                     </div>
@@ -126,13 +125,11 @@ $dh = new donhangUser();
                     <div class="header-right">
                         <ul class="list-unstyled list-inline">
                             <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span
-                                        class="key">currency :</span><span class="value">VNĐ</span></a>
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">VNĐ</span></a>
                             </li>
 
                             <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span
-                                        class="key">language :</span><span class="value">English </span></b></a>
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span></b></a>
                             </li>
                         </ul>
                     </div>
@@ -152,11 +149,12 @@ $dh = new donhangUser();
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="?action=cart">Cart - <span
-                                class="cart-amunt"><?php $tongtien = $d->formatMoney($_SESSION['tongtien']); echo $tongtien ;?>
-                                VNĐ</span> <i class="fa fa-shopping-cart"></i> <?php if(isset($_SESSION['GH'])){
-                            $quantity = count($_SESSION['GH']); echo '<span class="product-count">' .$quantity . '</span>';
-                        } ?></a>
+                        <a href="?action=cart">Cart - <span class="cart-amunt"><?php $tongtien = $d->formatMoney($_SESSION['tongtien']);
+                                                                                echo $tongtien; ?>
+                                VNĐ</span> <i class="fa fa-shopping-cart"></i> <?php if (isset($_SESSION['GH'])) {
+                                                                                    $quantity = count($_SESSION['GH']);
+                                                                                    echo '<span class="product-count">' . $quantity . '</span>';
+                                                                                } ?></a>
                     </div>
                 </div>
             </div>
@@ -176,23 +174,23 @@ $dh = new donhangUser();
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="<?php $action = $_GET['action']; if($action == '') echo 'active' ?>"><a href="./"
-                                id="aactive">Home</a></li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'shoppage') echo 'active' ?>"><a
-                                href="?action=shoppage" id="aactive">Shop page</a></li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'chitietsp') echo 'active' ?>"><a
-                                href="?action=chitietsp&id=<?= $get1Prolast['id_sp'] ?>" id="aactive">Single product</a>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == '') echo 'active' ?>"><a href="./" id="aactive">Home</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'shoppage') echo 'active' ?>"><a href="?action=shoppage" id="aactive">Shop page</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'chitietsp') echo 'active' ?>"><a href="?action=chitietsp&id=<?= $get1Prolast['id_sp'] ?>" id="aactive">Single product</a>
                         </li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'cart') echo 'active' ?>"><a
-                                href="?action=cart" id="aactive">Cart</a></li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'checkout') echo 'active' ?>"><a
-                                href="?action=checkout" id="aactive">Checkout</a></li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'chitietsp') echo 'active' ?>"><a
-                                href="#" id="aactive">Category</a></li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'chitietsp') echo 'active' ?>"><a
-                                href="#" id="aactive">Others</a></li>
-                        <li class="<?php $action = $_GET['action']; if($action == 'chitietsp') echo 'active' ?>"><a
-                                href="#" id="aactive">Contact</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'cart') echo 'active' ?>"><a href="?action=cart" id="aactive">Cart</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'checkout') echo 'active' ?>"><a href="?action=checkout" id="aactive">Checkout</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'chitietsp') echo 'active' ?>"><a href="#" id="aactive">Category</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'chitietsp') echo 'active' ?>"><a href="#" id="aactive">Others</a></li>
+                        <li class="<?php $action = $_GET['action'];
+                                    if ($action == 'chitietsp') echo 'active' ?>"><a href="#" id="aactive">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -269,8 +267,7 @@ $dh = new donhangUser();
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com"
-                                target="_blank">freshDesignweb.com</a></p>
+                        <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
                     </div>
                 </div>
 
